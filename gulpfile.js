@@ -6,10 +6,21 @@ var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 var sh = require('shelljs');
+var ts = require('gulp-typescript');
+var path = require('path');
 
 var paths = {
     sass: ['./scss/**/*.scss']
 };
+
+var tsconfig = {
+    'typescript': {
+        removeComments: false,
+        target: 'ES5',
+        noExternalResolve: false,
+        noImplicitAny: false
+    }
+}
 
 gulp.task('default', ['sass']);
 
@@ -24,6 +35,18 @@ gulp.task('sass', function (done) {
         .pipe(gulp.dest('./www/css/'))
         .on('end', done);
 });
+
+var typescript = ts.createProject(tsconfig);
+gulp.task('typescript', function () {
+    var typescriptFiles = [
+        path.join('./www', "**/*.ts"),
+        path.join('./www/typings', "**/*.ts")
+    ];
+
+    return gulp.src(typescriptFiles)
+        .pipe(ts(ts))
+        .pipe(gulp.dest('./www/js/dest'));
+})
 
 gulp.task('watch', function () {
     gulp.watch(paths.sass, ['sass']);
