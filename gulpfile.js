@@ -20,15 +20,15 @@ var tsProjectEmily = ts.createProject({
     noEmitOnError: false
 });
 
-gulp.task('default', ['ts']);
+gulp.task('default', ['ts', 'html', 'css']);
 
 
-gulp.task('ts', function() {
+gulp.task('ts', function () {
     var tsResult = gulp.src('./www-develop/**/*.ts')
         .pipe(sourcemaps.init())
         .pipe(ts(tsProjectEmily));
 
-    tsResult._events.error[0] = function(error) {
+    tsResult._events.error[0] = function (error) {
         notifier.notify({
             'title': 'Compilation error',
             'message': error.__safety.toString(),
@@ -37,13 +37,25 @@ gulp.task('ts', function() {
     };
     return merge([
         tsResult.dts.pipe(gulp.dest('./www/definitions')),
-        tsResult.js.pipe(gulp.dest('./www/js'))
+        tsResult.js.pipe(gulp.dest('./www'))
     ]);
 });
 
-gulp.task('watch', function () {
-    gulp.watch('./www-develop/*.ts', ['ts']);
+gulp.task('css', function () {
+    gulp.src('./www-develop/**/*.css').pipe(gulp.dest('./www'));
 });
+
+gulp.task('html', function () {
+    gulp.src('./www-develop/**/*.html').pipe(gulp.dest('./www'));
+});
+
+gulp.task('watch', ['ts', 'html', 'css'], function () {
+    gulp.watch('./www-develop/**/*.ts', ['ts']);
+    gulp.watch('./www-develop/**/*.css', ['css']);
+    gulp.watch('./www-develop/**/*.html', ['html']);
+
+});
+
 
 gulp.task('install', ['git-check'], function () {
     return bower.commands.install()
@@ -51,6 +63,7 @@ gulp.task('install', ['git-check'], function () {
             gutil.log('bower', gutil.colors.cyan(data.id), data.message);
         });
 });
+
 
 gulp.task('git-check', function (done) {
     if (!sh.which('git')) {
