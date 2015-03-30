@@ -18,10 +18,11 @@ angular.module('starter', ['ionic'])
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
             }
 
-            // missing tsd
-            /*if (window.StatusBar) {
-                StatusBar.styleDefault();
-            }*/
+            /*  missing tsd
+             if (window.StatusBar) {
+             StatusBar.styleDefault();
+             }
+             */
         });
     })
 
