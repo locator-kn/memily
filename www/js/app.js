@@ -17,3 +17,34 @@ angular.module('starter', ['ionic'])
             }
         });
     })
+
+    .config(function ($stateProvider, $urlRouterProvider) {
+        $stateProvider
+
+            .state('app', {
+                url: "/app",
+                abstract: true,
+                templateUrl: "templates/menu.html",
+            })
+
+            .state('app.profile', {
+                url: "/profile",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/profile.html"
+                    }
+                }
+            })
+
+            .state('app.groups', {
+                url: "/groups",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/groups.html"
+                    }
+                }
+            });
+        $urlRouterProvider.otherwise('/app/profile');
+    });
+
+
