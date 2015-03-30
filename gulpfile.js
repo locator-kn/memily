@@ -24,7 +24,7 @@ gulp.task('default', ['ts']);
 
 
 gulp.task('ts', function() {
-    var tsResult = gulp.src('lib/*.ts')
+    var tsResult = gulp.src('./www-develop/**/*.ts')
         .pipe(sourcemaps.init())
         .pipe(ts(tsProjectEmily));
 
@@ -36,13 +36,13 @@ gulp.task('ts', function() {
         });
     };
     return merge([
-        tsResult.dts.pipe(gulp.dest('build/definitions')),
-        tsResult.js.pipe(gulp.dest('build/js'))
+        tsResult.dts.pipe(gulp.dest('./www/definitions')),
+        tsResult.js.pipe(gulp.dest('./www/js'))
     ]);
 });
 
 gulp.task('watch', function () {
-    gulp.watch('./www/*.ts', ['typescript']);
+    gulp.watch('./www-develop/*.ts', ['ts']);
 });
 
 gulp.task('install', ['git-check'], function () {
