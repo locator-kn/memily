@@ -20,7 +20,7 @@ var tsProjectEmily = ts.createProject({
     noEmitOnError: false
 });
 
-gulp.task('default', ['ts', 'html', 'css']);
+gulp.task('default', ['ts', 'html', 'css', 'lib']);
 
 
 gulp.task('ts', function () {
@@ -49,7 +49,11 @@ gulp.task('html', function () {
     gulp.src('./www-develop/**/*.html').pipe(gulp.dest('./www'));
 });
 
-gulp.task('watch', ['ts', 'html', 'css'], function () {
+gulp.task('lib', function () {
+    gulp.src('./www-develop/lib/**/*').pipe(gulp.dest('./www/lib'));
+});
+
+gulp.task('watch', ['ts', 'html', 'css', 'lib'], function () {
     gulp.watch('./www-develop/**/*.ts', ['ts']);
     gulp.watch('./www-develop/**/*.css', ['css']);
     gulp.watch('./www-develop/**/*.html', ['html']);
