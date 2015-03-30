@@ -7,31 +7,39 @@ var rename = require('gulp-rename');
 var sh = require('shelljs');
 var ts = require('gulp-typescript');
 var path = require('path');
+var notifier = require('node-notifier');
+var sourcemaps = require('gulp-sourcemaps');
+var merge = require('merge2');
 
 
-var tsconfig = {
-    'typescript': {
-        removeComments: false,
-        target: 'ES5',
-        noExternalResolve: false,
-        noImplicitAny: false
-    }
-}
+var tsProjectEmily = ts.createProject({
+    declarationFiles: true,
+    noExternalResolve: false,
+    module: 'commonjs',
+    target: 'ES6',
+    noEmitOnError: false
+});
 
-gulp.task('default', ['typescript']);
+gulp.task('default', ['ts']);
 
 
-var typescript = ts.createProject(tsconfig);
-gulp.task('typescript', function () {
-    var typescriptFiles = [
-        path.join('./www', "**/*.ts"),
-        path.join('./www/typings', "**/*.ts")
-    ];
+gulp.task('ts', function() {
+    var tsResult = gulp.src('lib/*.ts')
+        .pipe(sourcemaps.init())
+        .pipe(ts(tsProjectEmily));
 
-    return gulp.src(typescriptFiles)
-        .pipe(ts(ts))
-        .pipe(gulp.dest('./www/dest'));
-})
+    tsResult._events.error[0] = function(error) {
+        notifier.notify({
+            'title': 'Compilation error',
+            'message': error.__safety.toString(),
+            sound: true
+        });
+    };
+    return merge([
+        tsResult.dts.pipe(gulp.dest('build/definitions')),
+        tsResult.js.pipe(gulp.dest('build/js'))
+    ]);
+});
 
 gulp.task('watch', function () {
     gulp.watch('./www/*.ts', ['typescript']);
