@@ -1,5 +1,9 @@
-<ion-view view-title="profile">
+<ion-view view-title="profile" ng-controller="MainCtrl as mc">
     <ion-content>
         <h1>Profile</h1>
+        {{mc.variable}}
+        {{mc.getter}}
+        <input type="text" ng-model="mc.getter"/>
+        <button ng-click="mc.clear()">clear</button>
     </ion-content>
 </ion-view>

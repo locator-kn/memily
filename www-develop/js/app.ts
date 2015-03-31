@@ -1,6 +1,7 @@
 /// <reference path="../../typings/angularjs/angular.d.ts" />
 /// <reference path="../../typings/cordova-ionic/cordova-ionic.d.ts" />
 /// <reference path="../../typings/cordova/cordova.d.ts" />
+/// <reference path="./controller/mainCtrl.ts" />
 
 
 // Ionic Starter App
@@ -51,7 +52,7 @@ angular.module('starter', ['ionic'])
                     }
                 }
             });
-        $urlRouterProvider.otherwise('/app/profile');
-    });
+        $urlRouterProvider.otherwise('/app/profile')
+    }).controller(Controller.MainCtrl.controllerId, Controller.MainCtrl);
 
 
