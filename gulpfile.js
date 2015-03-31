@@ -16,8 +16,9 @@ var tsProjectEmily = ts.createProject({
     declarationFiles: true,
     noExternalResolve: false,
     module: 'commonjs',
-    target: 'ES6',
-    noEmitOnError: false
+    target: 'ES5',
+    noEmitOnError: false,
+    out: 'js/app.js'
 });
 
 gulp.task('default', ['ts', 'html', 'css', 'lib']);
