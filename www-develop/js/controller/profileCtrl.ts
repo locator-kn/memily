@@ -1,21 +1,14 @@
 module Controller {
     export class ProfileCtrl {
-        variable: string;
-        _getter: string;
-        constructor(private $scope) {
-            this.variable = 'testvariable';
-            this._getter = 'hallo';
-        }
-        get getter():string {
-            return this._getter;
-        }
+        result: string;
 
-        set getter(value: string) {
-            this._getter = value + 'additional';
+        constructor(private $scope, private ProfileService) {
+            this.getData()
         }
-
-        clear() {
-            this.getter = 'asd';
+        getData() {
+          this.ProfileService.getProfileData().then(profileData => {
+            this.result = profileData.name;
+          });
         }
 
         static controllerId: string = "ProfileCtrl";
