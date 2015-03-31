@@ -1,23 +1,9 @@
 module Service {
     export class ProfileService {
-        variable: string;
-        _getter: string;
+        result: string;
         constructor(private $scope) {
-            this.variable = 'testvariable';
-            this._getter = 'hallo';
+            this.result = 'this should be a result';
         }
-        get getter():string {
-            return this._getter;
-        }
-
-        set getter(value: string) {
-            this._getter = value + 'additional';
-        }
-
-        clear() {
-            this.getter = 'asd';
-        }
-
         static serviceId: string = "ProfileService";
     }
 }
