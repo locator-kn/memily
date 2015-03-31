@@ -1,7 +1,7 @@
 /// <reference path="../../typings/angularjs/angular.d.ts" />
 /// <reference path="../../typings/cordova-ionic/cordova-ionic.d.ts" />
 /// <reference path="../../typings/cordova/cordova.d.ts" />
-/// <reference path="./controller/mainCtrl.ts" />
+/// <reference path="./controller/profileCtrl.ts" />
 
 
 // Ionic Starter App
@@ -32,7 +32,7 @@ angular.module('starter', ['ionic'])
             .state('app', {
                 url: "/app",
                 abstract: true,
-                templateUrl: "templates/menu.html",
+                templateUrl: "templates/menu.html"
             })
 
             .state('app.profile', {
@@ -53,6 +53,6 @@ angular.module('starter', ['ionic'])
                 }
             });
         $urlRouterProvider.otherwise('/app/profile')
-    }).controller(Controller.MainCtrl.controllerId, Controller.MainCtrl);
+    }).controller(Controller.ProfileCtrl.controllerId, Controller.ProfileCtrl);
 
 

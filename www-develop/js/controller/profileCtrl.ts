@@ -1,5 +1,5 @@
 module Controller {
-    export class MainCtrl {
+    export class ProfileCtrl {
         variable: string;
         _getter: string;
         constructor(private $scope) {
@@ -17,9 +17,7 @@ module Controller {
         clear() {
             this.getter = 'asd';
         }
-
-
-
-        static controllerId: string = "MainCtrl";
+        
+        static controllerId: string = "ProfileCtrl";
     }
 }
