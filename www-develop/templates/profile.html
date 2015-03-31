@@ -1,6 +1,11 @@
 <ion-view view-title="profile" ng-controller="ProfileCtrl as pc">
     <ion-content>
         <h1>Profile</h1>
-        {{pc.result}}
+        <p>{{pc._id}}</p>
+        <img src="{{pc.picture}}">
+        <p>{{pc.surname + ' ' + pc.name}}</p>
+        <p>Mail: {{pc.mail}}</p>
+        <p>Major: {{pc.major}}</p>
+        <p>Semester: {{pc.semester}}</p>
     </ion-content>
 </ion-view>
