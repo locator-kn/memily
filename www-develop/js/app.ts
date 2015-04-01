@@ -8,7 +8,7 @@
 /// <reference path="./service/profileService.ts" />
 /// <reference path="./service/loginService.ts" />
 /// <reference path="./service/dashboardService.ts" />
-
+/// <reference path="./service/groupService.ts" />
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
@@ -79,8 +79,10 @@ angular.module('starter', ['ionic'])
     .controller(Controller.ProfileCtrl.controllerId, Controller.ProfileCtrl)
     .controller(Controller.LoginCtrl.controllerId, Controller.LoginCtrl)
     .controller(Controller.DashboardCtrl.controllerId, Controller.DashboardCtrl)
+    .controller(Controller.GroupCtrl.controllerId, Controller.GroupCtrl)
     .service(Service.ProfileService.serviceId, Service.ProfileService)
     .service(Service.LoginService.serviceId, Service.LoginService)
-    .service(Service.DashboardService.serviceId, Service.DashboardService);
+    .service(Service.DashboardService.serviceId, Service.DashboardService)
+    .service(Service.GroupService.serviceId, Service.GroupService);
 
 
