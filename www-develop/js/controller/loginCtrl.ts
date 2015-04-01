@@ -1,7 +1,7 @@
 module Controller {
     export class LoginCtrl {
 
-        constructor(private $scope) {
+        constructor(private $scope, private LoginService) {
 
         }
 
