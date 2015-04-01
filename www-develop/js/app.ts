@@ -79,6 +79,15 @@ angular.module('starter', ['ionic'])
                         templateUrl: "templates/groupOverview.html"
                     }
                 }
+            })
+
+            .state('app.group', {
+                url: "/group/:groupID",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/group.html"
+                    }
+                }
             });
         $urlRouterProvider.otherwise('/app/login')
     })
@@ -91,6 +100,7 @@ angular.module('starter', ['ionic'])
     .service(Service.ProfileService.serviceId, Service.ProfileService)
     .service(Service.LoginService.serviceId, Service.LoginService)
     .service(Service.DashboardService.serviceId, Service.DashboardService)
+    .service(Service.GroupOverviewService.serviceId, Service.GroupOverviewService)
     .service(Service.GroupService.serviceId, Service.GroupService);
 
 
