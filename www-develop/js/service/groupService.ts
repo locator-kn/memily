@@ -4,7 +4,7 @@ module Service {
 
         }
 
-        posts() {
+        posts(_ID) {
             return this.$q(function (resolve, reject) {
                 setTimeout(function () {
                     resolve([
@@ -13,6 +13,7 @@ module Service {
                             "date": "2014-04-23T18:25:43.511Z",
                             "title": "hey yo",
                             "author": "551bfb6bedba87b86375ad3b",
+                            "author_thumbnail": "base64codeshit",
                             "content": "Cillum consectetur proident sit adipisicing ut exercitation.",
                             "comments": "[]"
                         },
@@ -21,6 +22,7 @@ module Service {
                             "date": "2013-04-23T18:25:43.511Z",
                             "title": "was geht?",
                             "author": "551bfb6b171cbd94abfb16f4",
+                            "author_thumbnail": "base64codeshit",
                             "content": "Ut reprehenderit ullamco ut ex laborum culpa eu.",
                             "comments": "[]"
                         },
@@ -29,6 +31,7 @@ module Service {
                             "date": "2012-04-23T18:25:43.511Z",
                             "title": "huhuhuhu",
                             "author": "551bfb6b64f023b9f876cfa3",
+                            "author_thumbnail": "base64codeshit",
                             "content": "Ut occaecat sit aliquip id quis magna irure dolore sint excepteur.",
                             "comments": "[]"
                         }
