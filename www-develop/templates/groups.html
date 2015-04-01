@@ -15,7 +15,7 @@
             </div>
 
 
-            <a ng-repeat="group in gc.myGroups" class="item" href="#">
+            <a ng-repeat="group in gc.registeredGroups" class="item" href="#">
                 {{group.name}}
             </a>
 
@@ -23,12 +23,8 @@
                 Suggested
             </div>
 
-            <a class="item" href="#">
-                Mathe 1
-            </a>
-
-            <a class="item" href="#">
-                Mathe 2
+            <a ng-repeat="group in gc.suggestedGroups" class="item" href="#">
+                {{group.name}}
             </a>
 
 
