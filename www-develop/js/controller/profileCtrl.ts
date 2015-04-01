@@ -11,11 +11,11 @@ module Controller {
         subscribed_groups:number[];
 
         constructor(private $scope, private ProfileService) {
-            this.getData();
+            this.myProfile();
         }
 
-        getData() {
-            this.ProfileService.getProfileData().then(profileData => {
+        myProfile() {
+            this.ProfileService.myProfile().then(profileData => {
                 this._id = profileData._id;
                 this.picture = profileData.picture;
                 this.name = profileData.name;

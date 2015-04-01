@@ -6,7 +6,7 @@ module Service {
             this.result = 'this should be a result';
         }
 
-        getProfileData() {
+        myProfile() {
             return this.$q(function (resolve, reject) {
                 setTimeout(function () {
 
