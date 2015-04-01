@@ -1,0 +1,21 @@
+.login-view {
+    padding: 20px;
+}
+
+.remember-me-checkbox {
+    border-style: none;
+    margin-left: -20px;
+}
+
+.submit {
+    margin-top: 10px;
+}
+
+.button-energized {
+    width: 100%;
+}
+
+.sign-up {
+    margin-top: 10px;
+    text-align: center;
+}

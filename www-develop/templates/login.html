@@ -1,17 +1,27 @@
 <ion-view view-title="Login" ng-controller="LoginCtrl as lc">
     <ion-content>
-        <div class="list">
-            <label class="item item-input">
-                <input type="text" placeholder="Mail">
-            </label>
-            <label class="item item-input">
-                <input type="password" placeholder="Password">
-            </label>
-
+        <div class="login-view">
+            <div class="login-elements">
+                <div class="list">
+                    <label class="item item-input">
+                        <input type="text" placeholder="Mail">
+                    </label>
+                    <label class="item item-input">
+                        <input type="password" placeholder="Password">
+                    </label>
+                </div>
+                <div class="remember-me">
+                    <ion-checkbox class="remember-me-checkbox">Remember me</ion-checkbox>
+                </div>
+                <div class="submit">
+                    <button class="login-button button button-energized" ng-click="lc.submit()">
+                        Log in
+                    </button>
+                </div>
+                <div class="sign-up">
+                    <a href="#" >New here? Sign up</a>
+                </div>
+            </div>
         </div>
-
-        <button class="login-button button button-energized" ng-click="lc.submit()">
-            button-energized
-        </button>
     </ion-content>
 </ion-view>
