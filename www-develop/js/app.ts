@@ -8,6 +8,8 @@
 /// <reference path="./service/profileService.ts" />
 /// <reference path="./service/loginService.ts" />
 /// <reference path="./service/dashboardService.ts" />
+
+/// <reference path="./controller/groupCtrl.ts" />
 /// <reference path="./service/groupService.ts" />
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
