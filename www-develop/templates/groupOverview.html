@@ -15,7 +15,7 @@
             </div>
 
 
-            <a ng-repeat="group in gc.registeredGroups" class="item" href="#">
+            <a ng-repeat="group in gc.registeredGroups" class="item" ng-click="gc.openGrp(group._id)" href="#">
                 {{group.name}}
             </a>
 
