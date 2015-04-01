@@ -2,6 +2,7 @@
 /// <reference path="../../typings/cordova-ionic/cordova-ionic.d.ts" />
 /// <reference path="../../typings/cordova/cordova.d.ts" />
 /// <reference path="./controller/profileCtrl.ts" />
+/// <reference path="./controller/loginCtrl.ts" />
 /// <reference path="./service/profileService.ts" />
 
 
@@ -36,6 +37,15 @@ angular.module('starter', ['ionic'])
                 templateUrl: "templates/menu.html"
             })
 
+            .state('app.login', {
+                url: "/login",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/login.html"
+                    }
+                }
+            })
+
             .state('app.profile', {
                 url: "/profile",
                 views: {
@@ -53,9 +63,10 @@ angular.module('starter', ['ionic'])
                     }
                 }
             });
-        $urlRouterProvider.otherwise('/app/profile')
+        $urlRouterProvider.otherwise('/app/login')
     })
     .controller(Controller.ProfileCtrl.controllerId, Controller.ProfileCtrl)
+    .controller(Controller.LoginCtrl.controllerId, Controller.LoginCtrl)
     .service(Service.ProfileService.serviceId, Service.ProfileService);
 
 
