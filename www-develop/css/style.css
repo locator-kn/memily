@@ -2,4 +2,6 @@ span.fullwidth {
     width: 100%;
     float: left;
 }
-
+.item.tabs.tabs-secondary.tabs-icon-left {
+    float: left;
+}
