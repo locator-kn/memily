@@ -1,15 +1,22 @@
 module Controller {
     export class GroupCtrl {
-        myGroups;
+        registeredGroups;
+        suggestedGroups;
 
         constructor (private $scope, private GroupService) {
-            this.getMyGroups();
+            this.myRegisteredGroups();
+            this.mySuggestedGroups();
         }
 
+        myRegisteredGroups() {
+            this.GroupService.myRegisteredGroups().then(registeredGroupsData => {
+                this.registeredGroups = registeredGroupsData;
+            })
+        }
 
-        getMyGroups() {
-            this.GroupService.myGroups().then(groupData => {
-                this.myGroups = groupData;
+        mySuggestedGroups() {
+            this.GroupService.mySuggestedGroups().then(suggestedGroupsData => {
+                this.suggestedGroups = suggestedGroupsData;
             })
         }
 
