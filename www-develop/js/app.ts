@@ -4,9 +4,8 @@
 /// <reference path="./controller/profileCtrl.ts" />
 /// <reference path="./controller/loginCtrl.ts" />
 /// <reference path="./service/profileService.ts" />
+/// <reference path="./service/loginService.ts" />
 
-
-// Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
@@ -67,6 +66,7 @@ angular.module('starter', ['ionic'])
     })
     .controller(Controller.ProfileCtrl.controllerId, Controller.ProfileCtrl)
     .controller(Controller.LoginCtrl.controllerId, Controller.LoginCtrl)
-    .service(Service.ProfileService.serviceId, Service.ProfileService);
+    .service(Service.ProfileService.serviceId, Service.ProfileService)
+    .service(Service.LoginService.serviceId, Service.LoginService);
 
 
