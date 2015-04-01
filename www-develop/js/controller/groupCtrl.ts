@@ -16,7 +16,7 @@ module Controller {
         }
 
         groupPosts() {
-            this.GroupService.posts().then(result => {
+            this.GroupService.posts(this._ID).then(result => {
                 this.posts = result;
                 console.info(this.posts);
             });
