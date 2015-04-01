@@ -1,9 +1,27 @@
 module Controller {
     export class GroupCtrl {
 
-        constructor (private $scope, private GroupOverviewService, private $stateParams) {
-            console.info(this.$stateParams);
+        _ID:number;
+        name:string;
+        posts;
+
+        constructor(private $scope, private GroupService, private $stateParams) {
+            this._ID = this.$stateParams.groupID;
+            this.groupPosts();
+            console.info(this._ID);
         }
+
+        groupInfo() {
+
+        }
+
+        groupPosts() {
+            this.GroupService.posts().then(result => {
+                this.posts = result;
+                console.info(this.posts);
+            });
+        }
+
 
         static controllerId:string = "GroupCtrl";
     }
