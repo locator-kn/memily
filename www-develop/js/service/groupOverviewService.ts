@@ -1,5 +1,5 @@
 module Service {
-    export class GroupService {
+    export class GroupOverviewService {
         constructor(private $q) {
 
         }
@@ -46,6 +46,6 @@ module Service {
             });
         }
 
-        static serviceId:string = "GroupService";
+        static serviceId:string = "GroupOverviewService";
     }
 }

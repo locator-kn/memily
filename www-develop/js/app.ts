@@ -9,8 +9,8 @@
 /// <reference path="./service/loginService.ts" />
 /// <reference path="./service/dashboardService.ts" />
 
-/// <reference path="./controller/groupCtrl.ts" />
-/// <reference path="./service/groupService.ts" />
+/// <reference path="./controller/groupOverviewCtrl.ts" />
+/// <reference path="./service/groupOverviewService.ts" />
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
@@ -68,11 +68,11 @@ angular.module('starter', ['ionic'])
                 }
             })
 
-            .state('app.groups', {
-                url: "/groups",
+            .state('app.groupsOverview', {
+                url: "/groupOverview",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/groups.html"
+                        templateUrl: "templates/groupOverview.html"
                     }
                 }
             });
@@ -81,10 +81,10 @@ angular.module('starter', ['ionic'])
     .controller(Controller.ProfileCtrl.controllerId, Controller.ProfileCtrl)
     .controller(Controller.LoginCtrl.controllerId, Controller.LoginCtrl)
     .controller(Controller.DashboardCtrl.controllerId, Controller.DashboardCtrl)
-    .controller(Controller.GroupCtrl.controllerId, Controller.GroupCtrl)
+    .controller(Controller.GroupOverviewCtrl.controllerId, Controller.GroupOverviewCtrl)
     .service(Service.ProfileService.serviceId, Service.ProfileService)
     .service(Service.LoginService.serviceId, Service.LoginService)
     .service(Service.DashboardService.serviceId, Service.DashboardService)
-    .service(Service.GroupService.serviceId, Service.GroupService);
+    .service(Service.GroupOverviewService.serviceId, Service.GroupOverviewService);
 
 
