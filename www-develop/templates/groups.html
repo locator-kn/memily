@@ -1,4 +1,4 @@
-<ion-view view-title="groups">
+<ion-view view-title="groups" ng-controller="GroupCtrl as gc">
     <ion-content>
         <div class="list">
 
@@ -14,12 +14,9 @@
                 Subscribed
             </div>
 
-            <a class="item" href="#">
-                Digi
-            </a>
 
-            <a class="item" href="#">
-                Prog
+            <a ng-repeat="group in gc.myGroups" class="item" href="#">
+                {{group.name}}
             </a>
 
             <div class="item item-divider">
@@ -36,5 +33,17 @@
 
 
         </div>
+
+
     </ion-content>
+    <div class="bar bar-footer">
+        <div class="button-bar">
+            <a class="button">First</a>
+            <a class="button">Second</a>
+            <a class="button">Third</a>
+        </div>
+    </div>
+
 </ion-view>
+
+

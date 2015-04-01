@@ -1,16 +1,16 @@
 module Controller {
     export class GroupCtrl {
-        _id:number;
-        name:string;
+        myGroups;
 
         constructor (private $scope, private GroupService) {
+            this.getMyGroups();
         }
 
-        myGroups() {
+
+        getMyGroups() {
             this.GroupService.myGroups().then(groupData => {
-                this._id = groupData._id;
-                this.name = groupData.name;
-            });
+                this.myGroups = groupData;
+            })
         }
 
         static controllerId:string = "GroupCtrl";
