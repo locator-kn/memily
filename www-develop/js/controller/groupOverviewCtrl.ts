@@ -20,12 +20,6 @@ module Controller {
             })
         }
 
-        openGrp(_id) {
-            this.$state.go('app.group', {
-                groupID: _id
-            });
-        }
-
         static controllerId:string = "GroupOverviewCtrl";
     }
 }
