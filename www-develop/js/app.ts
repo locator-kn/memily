@@ -82,11 +82,11 @@ angular.module('starter', ['ionic'])
                 }
             })
 
-            .state('app.group', {
-                url: "/group/:groupID",
+            .state('app.board', {
+                url: "/group/:groupID/board",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/group.html"
+                        templateUrl: "templates/board.html"
                     }
                 }
             });
