@@ -1,11 +1,11 @@
 module Controller {
-    export class GroupCtrl {
+    export class BoardCtrl {
 
         _ID:number;
         name:string;
         posts;
 
-        constructor(private $scope, private GroupService, private $stateParams) {
+        constructor(private $scope, private BoardService, private $stateParams) {
             this._ID = this.$stateParams.groupID;
             this.groupPosts();
             console.info(this._ID);
@@ -16,7 +16,7 @@ module Controller {
         }
 
         groupPosts() {
-            this.GroupService.posts(this._ID).then(result => {
+            this.BoardService.posts(this._ID).then(result => {
                 this.posts = result;
                 console.info(this.posts);
             });

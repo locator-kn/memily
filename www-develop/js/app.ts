@@ -12,8 +12,8 @@
 /// <reference path="./controller/groupOverviewCtrl.ts" />
 /// <reference path="./service/groupOverviewService.ts" />
 
-/// <reference path="./controller/groupCtrl.ts" />
-/// <reference path="./service/groupService.ts" />
+/// <reference path="./controller/boardCtrl.ts" />
+/// <reference path="./service/boardService.ts" />
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
@@ -96,12 +96,12 @@ angular.module('starter', ['ionic'])
     .controller(Controller.LoginCtrl.controllerId, Controller.LoginCtrl)
     .controller(Controller.DashboardCtrl.controllerId, Controller.DashboardCtrl)
     .controller(Controller.GroupOverviewCtrl.controllerId, Controller.GroupOverviewCtrl)
-    .controller(Controller.GroupCtrl.controllerId, Controller.GroupCtrl)
+    .controller(Controller.BoardCtrl.controllerId, Controller.BoardCtrl)
 
     .service(Service.ProfileService.serviceId, Service.ProfileService)
     .service(Service.LoginService.serviceId, Service.LoginService)
     .service(Service.DashboardService.serviceId, Service.DashboardService)
     .service(Service.GroupOverviewService.serviceId, Service.GroupOverviewService)
-    .service(Service.GroupService.serviceId, Service.GroupService);
+    .service(Service.BoardService.serviceId, Service.BoardService);
 
 

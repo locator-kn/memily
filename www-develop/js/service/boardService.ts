@@ -1,5 +1,5 @@
 module Service {
-    export class GroupService {
+    export class BoardService {
         posts_data;
         constructor(private $q, basePath) {
         }
@@ -40,6 +40,6 @@ module Service {
             });
         }
 
-        static serviceId:string = "GroupService";
+        static serviceId:string = "BoardService";
     }
 }
