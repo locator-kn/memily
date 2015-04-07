@@ -36,6 +36,7 @@ angular.module('starter', ['ionic'])
              */
         });
     })
+    .constant('basePath', '/api/')
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
 
