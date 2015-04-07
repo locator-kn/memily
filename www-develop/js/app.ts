@@ -89,7 +89,27 @@ angular.module('starter', ['ionic'])
                         templateUrl: "templates/board.html"
                     }
                 }
+            })
+
+            .state('app.docs', {
+                url: "/group/:groupID/docs",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/docs.html"
+                    }
+                }
+            })
+
+            .state('app.chats', {
+                url: "/group/:groupID/chats",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/chats.html"
+                    }
+                }
             });
+
+
         $urlRouterProvider.otherwise('/app/login')
     })
     .controller(Controller.ProfileCtrl.controllerId, Controller.ProfileCtrl)
