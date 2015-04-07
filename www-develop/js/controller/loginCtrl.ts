@@ -18,6 +18,13 @@ module Controller {
             this.$state.go('app.dashboard');
         }
 
+        showSignupView() {
+            this.$ionicViewService.nextViewOptions({
+                disableBack: true
+            });
+            this.$state.go('app.signup');
+        }
+
         static controllerId:string = "LoginCtrl";
     }
 }
