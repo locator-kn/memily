@@ -19,7 +19,7 @@ module Controller {
         }
 
         showSignupView() {
-            this.$ionicViewService.nextViewOptions({
+            this.$ionicHistory.nextViewOptions({
                 disableBack: true
             });
             this.$state.go('app.signup');
