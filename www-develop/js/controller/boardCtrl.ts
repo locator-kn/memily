@@ -23,6 +23,6 @@ module Controller {
         }
 
 
-        static controllerId:string = "GroupCtrl";
+        static controllerId:string = "BoardCtrl";
     }
 }
