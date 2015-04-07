@@ -1,13 +1,8 @@
 module Service {
     export class GroupService {
         posts_data;
-        constructor(private $q) {
-
-
-
+        constructor(private $q, basePath) {
         }
-
-
 
         posts(_ID) {
             return this.$q(function (resolve, reject) {
