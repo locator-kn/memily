@@ -1,16 +1,16 @@
 module Controller {
     export class GroupOverviewCtrl {
-        registeredGroups;
+        groups;
         suggestedGroups;
 
         constructor(private $scope, private GroupOverviewService, private $state) {
-            this.myRegisteredGroups();
+            this.myGroups();
             this.mySuggestedGroups();
         }
 
-        myRegisteredGroups() {
-            this.GroupOverviewService.myRegisteredGroups().then(registeredGroupsData => {
-                this.registeredGroups = registeredGroupsData;
+        myGroups() {
+            this.GroupOverviewService.myGroups().then(registeredGroupsData => {
+                this.groups = registeredGroupsData;
             })
         }
 

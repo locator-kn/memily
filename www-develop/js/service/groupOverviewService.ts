@@ -4,7 +4,7 @@ module Service {
 
         }
 
-        myRegisteredGroups() {
+        myGroups() {
             return this.$q(function (resolve, reject) {
                 setTimeout(function () {
                     resolve([
