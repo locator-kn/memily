@@ -1,6 +1,8 @@
 module Controller {
     export class ProfileEditCtrl {
 
+        mail:string;
+
         constructor(private $scope, private $state) {
 
         }
