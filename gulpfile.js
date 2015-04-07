@@ -10,6 +10,7 @@ var path = require('path');
 var notifier = require('node-notifier');
 var sourcemaps = require('gulp-sourcemaps');
 var merge = require('merge2');
+var shell = require('gulp-shell')
 
 
 var tsProjectEmily = ts.createProject({
@@ -21,7 +22,7 @@ var tsProjectEmily = ts.createProject({
     out: 'js/app.js'
 });
 
-gulp.task('default', ['ts', 'html', 'css', 'lib']);
+gulp.task('default', ['ts', 'html', 'css', 'lib', 'ionicserve']);
 
 
 gulp.task('ts', function () {
@@ -42,6 +43,10 @@ gulp.task('ts', function () {
     ]);
 });
 
+gulp.task('ionicserve', shell.task([
+    'ionic serve'
+]));
+
 gulp.task('css', function () {
     gulp.src('./www-develop/**/*.css').pipe(gulp.dest('./www'));
 });
@@ -58,7 +63,7 @@ gulp.task('watch', ['ts', 'html', 'css', 'lib'], function () {
     gulp.watch('./www-develop/**/*.ts', ['ts']);
     gulp.watch('./www-develop/**/*.css', ['css']);
     gulp.watch('./www-develop/**/*.html', ['html']);
-
+    gulp.run('ionicserve');
 });
 
 
