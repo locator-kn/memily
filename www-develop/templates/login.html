@@ -10,16 +10,16 @@
                         <input type="password" placeholder="Password">
                     </label>
                 </div>
-                <div class="remember-me">
+                <div class="login-remember-me">
                     <ion-checkbox class="remember-me-checkbox">Remember me</ion-checkbox>
                 </div>
-                <div class="submit">
+                <div class="login-submit">
                     <button class="login-button button button-energized" ng-click="lc.submit()">
                         Log in
                     </button>
                 </div>
                 <div class="sign-up">
-                    <a href="#" >New here? Sign up</a>
+                    <a ng-click="lc.showSignupView()" href="#">New here? Sign up</a>
                 </div>
             </div>
         </div>

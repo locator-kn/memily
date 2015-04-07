@@ -1,4 +1,4 @@
-<ion-view view-title="Group" ng-controller="GroupCtrl as gc">
+<ion-view view-title="Board" ng-controller="BoardCtrl as gc">
     <ion-content>
 
         <div class="list card" ng-repeat="post in gc.posts">
@@ -21,7 +21,7 @@
             <div class="item tabs tabs-secondary tabs-icon-left">
 
                 <p>
-                    <a href="#" class="subdued">5 Comments</a>
+                    <a href="#" class="subdued">{{post.comments_length}} Comments</a>
                 </p>
 
                 <a class="tab-item" href="#">
@@ -34,4 +34,5 @@
         </div>
 
     </ion-content>
+    <ng-include src="'/templates/grp_menu.html'"></ng-include>
 </ion-view>
