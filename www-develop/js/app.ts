@@ -15,6 +15,9 @@
 /// <reference path="./controller/groupCtrl.ts" />
 /// <reference path="./service/groupService.ts" />
 
+/// <reference path="./controller/profileEditCtrl.ts" />
+
+
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
@@ -72,6 +75,15 @@ angular.module('starter', ['ionic'])
                 }
             })
 
+            .state('app.profileEdit', {
+                url: "/profileEdit",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/profileEdit.html"
+                    }
+                }
+            })
+
             .state('app.groupsOverview', {
                 url: "/groupOverview",
                 views: {
@@ -89,9 +101,11 @@ angular.module('starter', ['ionic'])
                     }
                 }
             });
+
         $urlRouterProvider.otherwise('/app/login')
     })
     .controller(Controller.ProfileCtrl.controllerId, Controller.ProfileCtrl)
+    .controller(Controller.ProfileEditCtrl.controllerId, Controller.ProfileEditCtrl)
     .controller(Controller.LoginCtrl.controllerId, Controller.LoginCtrl)
     .controller(Controller.DashboardCtrl.controllerId, Controller.DashboardCtrl)
     .controller(Controller.GroupOverviewCtrl.controllerId, Controller.GroupOverviewCtrl)
