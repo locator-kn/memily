@@ -94,6 +94,7 @@ angular.module('starter', ['ionic'])
                 }
             })
 
+
             .state('app.board', {
                 url: "/group/:groupID/board",
                 views: {
@@ -121,7 +122,7 @@ angular.module('starter', ['ionic'])
                 }
             });
 
-            $urlRouterProvider.otherwise('/app/login')
+        $urlRouterProvider.otherwise('/app/login')
     })
     .controller(Controller.ProfileCtrl.controllerId, Controller.ProfileCtrl)
     .controller(Controller.ProfileEditCtrl.controllerId, Controller.ProfileEditCtrl)
