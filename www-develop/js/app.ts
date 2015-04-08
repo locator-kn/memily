@@ -12,8 +12,11 @@
 /// <reference path="./controller/groupOverviewCtrl.ts" />
 /// <reference path="./service/groupOverviewService.ts" />
 
-/// <reference path="./controller/groupCtrl.ts" />
-/// <reference path="./service/groupService.ts" />
+/// <reference path="./controller/boardCtrl.ts" />
+/// <reference path="./service/boardService.ts" />
+
+/// <reference path="./controller/profileEditCtrl.ts" />
+
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
@@ -36,6 +39,7 @@ angular.module('starter', ['ionic'])
              */
         });
     })
+    .constant('basePath', '/api/')
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
 
@@ -72,6 +76,15 @@ angular.module('starter', ['ionic'])
                 }
             })
 
+            .state('app.profileEdit', {
+                url: "/profileEdit",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/profileEdit.html"
+                    }
+                }
+            })
+
             .state('app.groupsOverview', {
                 url: "/groupOverview",
                 views: {
@@ -81,26 +94,46 @@ angular.module('starter', ['ionic'])
                 }
             })
 
-            .state('app.group', {
-                url: "/group/:groupID",
+            .state('app.board', {
+                url: "/group/:groupID/board",
                 views: {
                     'menuContent': {
-                        templateUrl: "templates/group.html"
+                        templateUrl: "templates/board.html"
+                    }
+                }
+            })
+
+            .state('app.docs', {
+                url: "/group/:groupID/docs",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/docs.html"
+                    }
+                }
+            })
+
+            .state('app.chats', {
+                url: "/group/:groupID/chats",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/chats.html"
                     }
                 }
             });
-        $urlRouterProvider.otherwise('/app/login')
+
+            $urlRouterProvider.otherwise('/app/login')
     })
     .controller(Controller.ProfileCtrl.controllerId, Controller.ProfileCtrl)
+    .controller(Controller.ProfileEditCtrl.controllerId, Controller.ProfileEditCtrl)
     .controller(Controller.LoginCtrl.controllerId, Controller.LoginCtrl)
     .controller(Controller.DashboardCtrl.controllerId, Controller.DashboardCtrl)
     .controller(Controller.GroupOverviewCtrl.controllerId, Controller.GroupOverviewCtrl)
-    .controller(Controller.GroupCtrl.controllerId, Controller.GroupCtrl)
+    .controller(Controller.BoardCtrl.controllerId, Controller.BoardCtrl)
 
     .service(Service.ProfileService.serviceId, Service.ProfileService)
     .service(Service.LoginService.serviceId, Service.LoginService)
     .service(Service.DashboardService.serviceId, Service.DashboardService)
     .service(Service.GroupOverviewService.serviceId, Service.GroupOverviewService)
-    .service(Service.GroupService.serviceId, Service.GroupService);
+    .service(Service.BoardService.serviceId, Service.BoardService);
 
 
