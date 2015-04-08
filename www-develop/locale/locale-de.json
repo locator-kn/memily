@@ -1,5 +1,16 @@
 {
     "NAV_DASHBOARD": "Brett",
     "NAV_PROFILE": "Profile",
-    "NAV_GROUPS": "Gruppen"
+    "NAV_GROUPS": "Gruppen",
+
+    "GRP_COMMENTS": "Kommentare",
+    "GRP_COMMENT": "Kommentieren",
+    "GRP_OVERVIEW": "Gruppenübersicht",
+    "GRP_SUBSCRIBED": "Eingeschriebene Gruppen",
+    "GRP_SUGGESTED": "Empfohlene Gruppen",
+    "GRP_GLOBAL": "Globale Gruppen",
+
+    "PRF_PROFILE": "Profil",
+    "PRF_EDIT": "Profil bearbeiten",
+    "PRF_MAJOR": "Studiengang"
 }

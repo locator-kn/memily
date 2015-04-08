@@ -1,4 +1,4 @@
-<ion-view view-title="Board" ng-controller="BoardCtrl as gc">
+<ion-view view-title="{{ 'NAV_DASHBOARD' | translate }}" ng-controller="BoardCtrl as gc">
     <ion-content>
 
         <div class="list card" ng-repeat="post in gc.posts">
@@ -21,12 +21,12 @@
             <div class="item tabs tabs-secondary tabs-icon-left">
 
                 <p>
-                    <a href="#" class="subdued">{{post.comments_length}} Comments</a>
+                    <a href="#" class="subdued">{{post.comments_length}} {{ 'GRP_COMMENTS' | translate }}</a>
                 </p>
 
                 <a class="tab-item" href="#">
                     <i class="icon ion-chatbox"></i>
-                    Comment
+                    {{ 'GRP_COMMENT' | translate }}
                 </a>
 
             </div>

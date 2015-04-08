@@ -1,9 +1,9 @@
-<ion-view view-title="Group Overview" ng-controller="GroupOverviewCtrl as gc">
+<ion-view view-title="{{ 'GRP_OVERVIEW' | translate }}" ng-controller="GroupOverviewCtrl as gc">
     <ion-content>
         <div class="list">
 
             <div class="item item-divider">
-                Global
+                {{ 'GRP_GLOBAL' | translate }}
             </div>
 
             <a class="item" href="#">
@@ -11,7 +11,7 @@
             </a>
 
             <div class="item item-divider">
-                Subscribed
+                {{ 'GRP_SUBSCRIBED' | translate }}
             </div>
 
 
@@ -20,7 +20,7 @@
             </a>
 
             <div class="item item-divider">
-                Suggested
+                {{ 'GRP_SUGGESTED' | translate }}
             </div>
 
             <a ng-repeat="group in gc.suggestedGroups" class="item" href="#">
