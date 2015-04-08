@@ -1,4 +1,3 @@
-
 /// <reference path="../../typings/angularjs/angular.d.ts" />
 /// <reference path="../../typings/angular-translate/angular-translate.d.ts" />
 /// <reference path="../../typings/cordova-ionic/cordova-ionic.d.ts" />
@@ -141,29 +140,10 @@ angular.module('starter', ['ionic', 'pascalprecht.translate'])
 
 
     .config(function ($translateProvider) {
-        /*$translateProvider.translations('de', {
-            NAV_DASHBOARD: 'Brett',
-            NAV_PROFILE: 'Profile',
-            NAV_GROUPS: 'Gruppen'
-        });
-
-
-        $translateProvider.translations('en', {
-            NAV_DASHBOARD: 'Dashboard',
-            NAV_PROFILE: 'Profile',
-            NAV_GROUPS: 'Groups'
-        });
-        */
-
         $translateProvider.useStaticFilesLoader({
             prefix: 'locale/locale-',
             suffix: '.json'
-        });
-        $translateProvider.preferredLanguage('en_US');
-
-
-        // Standardsprache
-        $translateProvider.preferredLanguage('de');
+        }).preferredLanguage('de');
     });
 
 
