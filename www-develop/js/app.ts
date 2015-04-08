@@ -1,4 +1,3 @@
-
 /// <reference path="../../typings/angularjs/angular.d.ts" />
 /// <reference path="../../typings/angular-translate/angular-translate.d.ts" />
 /// <reference path="../../typings/cordova-ionic/cordova-ionic.d.ts" />
@@ -24,7 +23,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-angular.module('starter', ['ionic', 'pascalprecht.translate'])
+angular.module('starter', ['ionic', 'pascalprecht.translate', 'angularSpinner'])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -141,29 +140,10 @@ angular.module('starter', ['ionic', 'pascalprecht.translate'])
 
 
     .config(function ($translateProvider) {
-        /*$translateProvider.translations('de', {
-            NAV_DASHBOARD: 'Brett',
-            NAV_PROFILE: 'Profile',
-            NAV_GROUPS: 'Gruppen'
-        });
-
-
-        $translateProvider.translations('en', {
-            NAV_DASHBOARD: 'Dashboard',
-            NAV_PROFILE: 'Profile',
-            NAV_GROUPS: 'Groups'
-        });
-        */
-
         $translateProvider.useStaticFilesLoader({
             prefix: 'locale/locale-',
             suffix: '.json'
-        });
-        $translateProvider.preferredLanguage('en_US');
-
-
-        // Standardsprache
-        $translateProvider.preferredLanguage('de');
+        }).preferredLanguage('de');
     });
 
 
