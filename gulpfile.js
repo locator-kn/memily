@@ -22,7 +22,7 @@ var tsProjectEmily = ts.createProject({
     out: 'js/app.js'
 });
 
-gulp.task('default', ['ts', 'html', 'css', 'lib', 'ionicserve']);
+gulp.task('default', ['ts', 'html', 'css', 'lib', 'locale', 'ionicserve']);
 
 
 gulp.task('ts', function () {
@@ -43,6 +43,10 @@ gulp.task('ts', function () {
     ]);
 });
 
+gulp.task('locale', function() {
+    gulp.src('./www-develop/locale/**/*').pipe(gulp.dest('./www/locale'));
+});
+
 gulp.task('ionicserve', shell.task([
     'ionic serve'
 ]));
@@ -59,10 +63,12 @@ gulp.task('lib', function () {
     gulp.src('./www-develop/lib/**/*').pipe(gulp.dest('./www/lib'));
 });
 
-gulp.task('watch', ['ts', 'html', 'css', 'lib'], function () {
+gulp.task('watch', ['ts', 'html', 'css', 'lib', 'locale'], function () {
     gulp.watch('./www-develop/**/*.ts', ['ts']);
     gulp.watch('./www-develop/**/*.css', ['css']);
     gulp.watch('./www-develop/**/*.html', ['html']);
+    gulp.watch('./www-develop/locale/**/*', ['locale']);
+
     gulp.run('ionicserve');
 });
 

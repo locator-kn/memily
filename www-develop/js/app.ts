@@ -139,18 +139,27 @@ angular.module('starter', ['ionic', 'pascalprecht.translate'])
     .service(Service.GroupOverviewService.serviceId, Service.GroupOverviewService)
     .service(Service.BoardService.serviceId, Service.BoardService)
 
+
     .config(function ($translateProvider) {
-        $translateProvider.translations('de', {
+        /*$translateProvider.translations('de', {
             NAV_DASHBOARD: 'Brett',
             NAV_PROFILE: 'Profile',
             NAV_GROUPS: 'Gruppen'
         });
+
 
         $translateProvider.translations('en', {
             NAV_DASHBOARD: 'Dashboard',
             NAV_PROFILE: 'Profile',
             NAV_GROUPS: 'Groups'
         });
+        */
+
+        $translateProvider.useStaticFilesLoader({
+            prefix: 'locale/locale-',
+            suffix: '.json'
+        });
+        $translateProvider.preferredLanguage('en_US');
 
 
         // Standardsprache
