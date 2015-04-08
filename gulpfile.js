@@ -26,7 +26,7 @@ gulp.task('default', ['ts', 'html', 'css', 'lib', 'ionicserve']);
 
 
 gulp.task('ts', function () {
-    var tsResult = gulp.src('./www-develop/**/*.ts')
+    var tsResult = gulp.src(['./www-develop/**/*.ts', '!./www-develop/lib/components/**/*.ts'])
         .pipe(sourcemaps.init())
         .pipe(ts(tsProjectEmily));
 
