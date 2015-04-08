@@ -1,4 +1,6 @@
+
 /// <reference path="../../typings/angularjs/angular.d.ts" />
+/// <reference path="../../typings/angular-translate/angular-translate.d.ts" />
 /// <reference path="../../typings/cordova-ionic/cordova-ionic.d.ts" />
 /// <reference path="../../typings/cordova/cordova.d.ts" />
 /// <reference path="./controller/profileCtrl.ts" />
@@ -22,7 +24,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 
-angular.module('starter', ['ionic'])
+angular.module('starter', ['ionic', 'pascalprecht.translate'])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -135,6 +137,24 @@ angular.module('starter', ['ionic'])
     .service(Service.LoginService.serviceId, Service.LoginService)
     .service(Service.DashboardService.serviceId, Service.DashboardService)
     .service(Service.GroupOverviewService.serviceId, Service.GroupOverviewService)
-    .service(Service.BoardService.serviceId, Service.BoardService);
+    .service(Service.BoardService.serviceId, Service.BoardService)
+
+    .config(function ($translateProvider) {
+        $translateProvider.translations('de', {
+            NAV_DASHBOARD: 'Brett',
+            NAV_PROFILE: 'Profile',
+            NAV_GROUPS: 'Gruppen'
+        });
+
+        $translateProvider.translations('en', {
+            NAV_DASHBOARD: 'Dashboard',
+            NAV_PROFILE: 'Profile',
+            NAV_GROUPS: 'Groups'
+        });
+
+
+        // Standardsprache
+        $translateProvider.preferredLanguage('de');
+    });
 
 
