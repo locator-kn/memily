@@ -12,5 +12,7 @@
 
     "PRF_PROFILE": "Profil",
     "PRF_EDIT": "Profil bearbeiten",
-    "PRF_MAJOR": "Studiengang"
+    "PRF_MAJOR": "Studiengang",
+    "PRF_SAVE":  "Speichern",
+    "PRF_CANCEL": "Abbrechen"
 }

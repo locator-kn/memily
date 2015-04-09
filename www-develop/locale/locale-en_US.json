@@ -12,5 +12,7 @@
 
     "PRF_PROFILE": "Profile",
     "PRF_EDIT": "Edit profile",
-    "PRF_MAJOR": "Major"
+    "PRF_MAJOR": "Major",
+    "PRF_SAVE":  "Save",
+    "PRF_CANCEL": "Cancel"
 }

@@ -1,14 +1,23 @@
+
 <ion-view view-title="profileEdit" ng-controller="ProfileEditCtrl as pec">
     <ion-content>
         <div class="list">
+            <label class="item">
+                <img src="{{pec.picture}}">
+                <button class="button ion-edit"></button>
+            </label>
             <label class="item item-input">
                 <span class="input-label">New Email</span>
-                <input type="text" ng-model="pec.mail">
+                <input type="text" placeholder="{{pec.mail}}" ng-model="pec.mail">
             </label>
         </div>
         <div class="row">
-            <button class="col button button-energized" ng-click="pec.saveEdit()">Save</button>
-            <button class="col button button-energized" ng-click="pec.cancelEdit()">Cancel</button>
+            <button class="col button button-energized" ng-click="pec.saveEdit()">
+                {{'PRF_SAVE' |translate}}
+            </button>
+            <button class="col button button-energized" ng-click="pec.cancelEdit()">
+                {{'PRF_CANCEL' |translate}}
+            </button>
         </div>
     </ion-content>
 </ion-view>
