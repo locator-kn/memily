@@ -2,22 +2,22 @@
     <ion-content>
 
         <div class="list card" ng-repeat="post in gc.posts">
+            <a ng-href="#/app/group/post/{{post._id}}">
+                <div class="item item-avatar">
+                    <img src="{{post.author_thumbnail}}">
 
-            <div class="item item-avatar">
-                <img src="{{post.author_thumbnail}}">
+                    <h2>{{post.title}}</h2>
 
-                <h2>{{post.title}}</h2>
+                    <p>{{post.date}}</p>
+                </div>
 
-                <p>{{post.date}}</p>
-            </div>
+                <div class="item item-body">
+                    <p>
+                        {{post.content}}
+                    </p>
 
-            <div class="item item-body">
-                <p>
-                    {{post.content}}
-                </p>
-
-            </div>
-
+                </div>
+            </a>
             <div class="item tabs tabs-secondary tabs-icon-left">
 
                 <p>

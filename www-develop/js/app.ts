@@ -18,6 +18,10 @@
 
 /// <reference path="./controller/profileEditCtrl.ts" />
 
+/// <reference path="./controller/postCtrl.ts" />
+/// <reference path="./service/postService.ts" />
+
+
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
@@ -105,6 +109,15 @@ angular.module('starter', ['ionic', 'pascalprecht.translate'])
                 }
             })
 
+            .state('app.post', {
+                url: "/group/post/:postID",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/post.html"
+                    }
+                }
+            })
+
             .state('app.docs', {
                 url: "/group/:groupID/docs",
                 views: {
@@ -131,13 +144,14 @@ angular.module('starter', ['ionic', 'pascalprecht.translate'])
     .controller(Controller.DashboardCtrl.controllerId, Controller.DashboardCtrl)
     .controller(Controller.GroupOverviewCtrl.controllerId, Controller.GroupOverviewCtrl)
     .controller(Controller.BoardCtrl.controllerId, Controller.BoardCtrl)
+    .controller(Controller.PostCtrl.controllerId, Controller.PostCtrl)
 
     .service(Service.ProfileService.serviceId, Service.ProfileService)
     .service(Service.LoginService.serviceId, Service.LoginService)
     .service(Service.DashboardService.serviceId, Service.DashboardService)
     .service(Service.GroupOverviewService.serviceId, Service.GroupOverviewService)
     .service(Service.BoardService.serviceId, Service.BoardService)
-
+    .service(Service.PostService.serviceId, Service.PostService)
 
     .config(function ($translateProvider) {
         $translateProvider.useStaticFilesLoader({

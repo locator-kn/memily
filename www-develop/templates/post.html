@@ -1,0 +1,38 @@
+<ion-view view-title="Post" ng-controller="PostCtrl as pc">
+    <ion-content>
+        <div class="list card">
+            <div class="item item-avatar">
+                <img src="{{pc.group_post.author_thumbnail}}">
+
+                <h2>{{pc.group_post.title}}</h2>
+
+                <p>{{pc.group_post.date}}</p>
+            </div>
+
+            <div class="item item-body">
+                <p>
+                    {{pc.group_post.content}}
+                </p>
+
+            </div>
+            <div class="item tabs tabs-secondary tabs-icon-left">
+
+                <p>
+                    <a href="#" class="subdued">{{post.comments_length}} {{ 'GRP_COMMENTS' | translate }}</a>
+                </p>
+
+                <a class="tab-item" href="#">
+                    <i class="icon ion-chatbox"></i>
+                    {{ 'GRP_COMMENT' | translate }}
+                </a>
+            </div>
+
+            <div class="item comment" ng-repeat="comment in pc.group_post.comments">
+                <img src="{{pc.group_post.author_thumbnail}}">
+                <p>{{comment.author}}</p>
+                <p>{{comment.content}}</p>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
