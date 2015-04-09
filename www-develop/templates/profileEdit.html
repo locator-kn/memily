@@ -4,10 +4,12 @@
         <div class="list">
             <label class="item">
                 <img src="{{pec.picture}}">
-                <button class="button ion-edit"></button>
+                <button class="button ion-edit" ng-click="pec.editPicture()"></button>
             </label>
             <label class="item item-input">
-                <span class="input-label">New Email</span>
+                <span class="input-label">
+                    New Email
+                </span>
                 <input type="text" placeholder="{{pec.mail}}" ng-model="pec.mail">
             </label>
         </div>

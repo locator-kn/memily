@@ -29,6 +29,10 @@ module Controller {
             });
         }
 
+        editPicture() {
+
+        }
+
         cancelEdit() {
             this.$state.go('app.profile');
         }
