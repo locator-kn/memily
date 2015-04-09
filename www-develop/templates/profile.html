@@ -1,12 +1,16 @@
 <ion-view view-title="{{'PRF_PROFILE' |translate}}" ng-controller="ProfileCtrl as pc">
     <ion-content>
-        <h1>{{'PRF_PROFILE' |translate}}</h1>
-        <p>{{pc._id}}</p>
-        <img src="{{pc.picture}}">
-        <p>{{pc.surname + ' ' + pc.name}}</p>
-        <p>Mail: {{pc.mail}}</p>
-        <p>{{'PRF_MAJOR' |translate}}: {{pc.major}}</p>
-        <p>Semester: {{pc.semester}}</p>
+        <div class="card">
+            <div class="item item-divider"
+            <h1>{{pc.surname + ' ' + pc.name}}</h1>
+            </div>
+            <img src="{{pc.picture}}">
+            <div class="item item-text-wrap">
+                <p class="ion-email"> {{pc.mail}}</p>
+                <p>{{'PRF_MAJOR' |translate}}: {{pc.major}}</p>
+                <p>Semester: {{pc.semester}}</p>
+            </div>
+        </div>
         <a class="button button-energized" href="/#/app/profileEdit">
             {{'PRF_EDIT' |translate}}
         </a>
