@@ -11,6 +11,7 @@ var notifier = require('node-notifier');
 var sourcemaps = require('gulp-sourcemaps');
 var merge = require('merge2');
 var shell = require('gulp-shell')
+var typescript15 = require('typescript');
 
 
 var tsProjectEmily = ts.createProject({
@@ -19,7 +20,8 @@ var tsProjectEmily = ts.createProject({
     module: 'commonjs',
     target: 'ES5',
     noEmitOnError: false,
-    out: 'js/app.js'
+    out: 'js/app.js',
+    typescript: typescript15
 });
 
 gulp.task('default', ['ts', 'html', 'css', 'lib', 'locale', 'ionicserve']);
