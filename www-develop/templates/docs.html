@@ -1,12 +1,16 @@
 <ion-view view-title="Documents" ng-controller="DocumentOverviewCtrl as doc">
     <ion-content>
         <div class="row">
-            <button class="col button button-energized ion-plus">
-                Add
+            <button class="col button button-energized ion-plus button-small">
+                Add Document
             </button>
 
-            <div class="col ion-search"></div>
-            <input class="col ion-search">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" placeholder="Search">
+                </label>
+            </div>
 
         </div>
 
