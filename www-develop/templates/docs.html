@@ -1,7 +1,41 @@
-<ion-view view-title="Documents">
+<ion-view view-title="Documents" ng-controller="DocumentOverviewCtrl as doc">
     <ion-content>
+        <div class="row">
+            <button class="col button button-energized ion-plus">
+                Add
+            </button>
 
-        <h2>Docs</h2>
+            <div class="col ion-search"></div>
+            <input class="col ion-search">
+
+        </div>
+
+        <div class="list card" ng-repeat="document in doc.documents">
+
+            <a ng-href="#/app/group/post/{{post._id}}">
+                <div class="item item-avatar">
+
+                    <h2>{{document.name}}</h2>
+
+                    <p>{{document.date}}</p>
+                    <p>Uploader: {{document.uploader}}</p>
+                </div>
+
+                <div class="item item-body">
+                    <p>
+                        {{document.description}}
+                    </p>
+
+                </div>
+            </a>
+            <div class="item tabs tabs-secondary tabs-icon-left">
+
+                <p>
+                    <a href="#" class="subdued">{{post.comments_length}} {{ 'GRP_COMMENTS' | translate }}</a>
+                </p>
+
+            </div>
+        </div>
 
     </ion-content>
 </ion-view>
