@@ -1,5 +1,5 @@
 <ion-view view-title="Documents" ng-controller="DocumentOverviewCtrl as doc">
-    <ion-content>
+    <div class="bar bar-subheader">
         <div class="row">
             <button class="col button button-energized ion-plus button-small">
                 Add Document
@@ -13,9 +13,9 @@
             </div>
 
         </div>
-
+    </div>
+    <ion-content>
         <div class="list card" ng-repeat="document in doc.documents">
-
             <a ng-href="#/app/group/post/{{post._id}}">
                 <div class="item item-avatar">
 
