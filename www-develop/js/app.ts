@@ -21,6 +21,9 @@
 /// <reference path="./controller/postCtrl.ts" />
 /// <reference path="./service/postService.ts" />
 
+/// <reference path="./controller/chatCtrl.ts" />
+/// <reference path="./controller/documentCtrl.ts" />
+
 
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
@@ -145,6 +148,9 @@ angular.module('starter', ['ionic', 'pascalprecht.translate'])
     .controller(Controller.GroupOverviewCtrl.controllerId, Controller.GroupOverviewCtrl)
     .controller(Controller.BoardCtrl.controllerId, Controller.BoardCtrl)
     .controller(Controller.PostCtrl.controllerId, Controller.PostCtrl)
+    .controller(Controller.ChatCtrl.controllerId, Controller.ChatCtrl)
+    .controller(Controller.DocumentCtrl.controllerId, Controller.DocumentCtrl)
+
 
     .service(Service.ProfileService.serviceId, Service.ProfileService)
     .service(Service.LoginService.serviceId, Service.LoginService)
@@ -152,6 +158,7 @@ angular.module('starter', ['ionic', 'pascalprecht.translate'])
     .service(Service.GroupOverviewService.serviceId, Service.GroupOverviewService)
     .service(Service.BoardService.serviceId, Service.BoardService)
     .service(Service.PostService.serviceId, Service.PostService)
+
 
     .config(function ($translateProvider) {
         $translateProvider.useStaticFilesLoader({
