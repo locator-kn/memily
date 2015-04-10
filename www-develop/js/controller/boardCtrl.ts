@@ -8,7 +8,6 @@ module Controller {
         constructor(private $scope, private BoardService, private $stateParams) {
             this._ID = this.$stateParams.groupID;
             this.groupPosts();
-            console.info(this._ID);
         }
 
         groupInfo() {
