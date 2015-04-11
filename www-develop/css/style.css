@@ -9,3 +9,7 @@ span.fullwidth {
 .smilie i {
     display: inline-block;
 }
+
+.thread-link  {
+    text-decoration: none;
+}

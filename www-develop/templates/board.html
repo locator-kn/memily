@@ -2,28 +2,32 @@
     <ion-content>
 
         <div class="list card" ng-repeat="post in gc.posts">
-            <a ng-href="#/app/group/post/{{post._id}}">
+            <a class="thread-link" ng-href="#/app/group/post/{{post._id}}">
                 <div class="item item-avatar">
+
                     <img src="{{post.author_thumbnail}}">
 
                     <h2>{{post.title}}</h2>
 
+
                     <p>{{post.date}}</p>
                 </div>
-
-                <div class="item item-body">
-                    <p class="smilie" ng-bind-html="post.content | smilies"></p>
-
-                </div>
             </a>
+
+            <div class="item item-body">
+                <p class="smilie" ng-bind-html="post.content | smilies"></p>
+
+            </div>
+
 
             <div class="item tabs tabs-secondary tabs-icon-left">
 
                 <p>
-                    <a href="#" class="subdued">{{post.comments_length}} {{ 'GRP_COMMENTS' | translate }}</a>
+                    <a ng-href="#/app/group/post/{{post._id}}" class="subdued">{{post.comments_length}} {{
+                        'GRP_COMMENTS' | translate }}</a>
                 </p>
 
-                <a class="tab-item" href="#">
+                <a class="tab-item" ng-href="#/app/group/post/{{post._id}}">
                     <i class="icon ion-chatbox"></i>
                     {{ 'GRP_COMMENT' | translate }}
                 </a>
