@@ -23,5 +23,6 @@ module Controller {
 
 
         static controllerId:string = "BoardCtrl";
+
     }
 }
