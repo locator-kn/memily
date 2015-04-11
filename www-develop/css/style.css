@@ -5,3 +5,11 @@ span.fullwidth {
 .item.tabs.tabs-secondary.tabs-icon-left {
     float: left;
 }
+
+.smilie i {
+    display: inline-block;
+}
+
+.thread-link  {
+    text-decoration: none;
+}
