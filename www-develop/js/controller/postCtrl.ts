@@ -11,7 +11,6 @@ module Controller {
         post() {
             this.PostService.post(this._ID).then(result => {
                 this.group_post = result;
-                console.log(result.comments[0].content);
             });
         }
         static controllerId:string="PostCtrl";
