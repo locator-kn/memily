@@ -8,7 +8,7 @@ module Controller {
         submit(username, password) {
             //var encodedPassword = $base64.encode(password);
 
-            this.LoginService.auhtentification(username, password).then(result => {
+            this.LoginService.authentification(username, password).then(result => {
 
             });
 

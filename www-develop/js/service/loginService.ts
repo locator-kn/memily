@@ -14,7 +14,7 @@ module Service {
             });
         }
 
-        auhtentification (username, password) {
+        authentification (username, password) {
             var authdata = this.$base64.encode(username + ':' + password);
             this.$http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
             return this.$http.get('templates/dashboard.html');
