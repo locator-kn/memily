@@ -25,6 +25,10 @@
 /// <reference path="./controller/documentOverviewCtrl.ts" />
 /// <reference path="./service/documentOverviewService.ts" />
 
+/// <reference path="./controller/documentUploadCtrl.ts" />
+
+
+
 
 
 
@@ -132,6 +136,15 @@ angular.module('starter', ['ionic', 'pascalprecht.translate'])
                 }
             })
 
+            .state('app.docUpload', {
+                url: "/group/:groupID/docs/upload",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/docUpload.html"
+                    }
+                }
+            })
+
             .state('app.chats', {
                 url: "/group/:groupID/chats",
                 views: {
@@ -151,6 +164,8 @@ angular.module('starter', ['ionic', 'pascalprecht.translate'])
     .controller(Controller.BoardCtrl.controllerId, Controller.BoardCtrl)
     .controller(Controller.PostCtrl.controllerId, Controller.PostCtrl)
     .controller(Controller.DocumentOverviewCtrl.controllerId, Controller.DocumentOverviewCtrl)
+    .controller(Controller.DocumentUploadCtrl.controllerId, Controller.DocumentUploadCtrl)
+
 
     .service(Service.ProfileService.serviceId, Service.ProfileService)
     .service(Service.LoginService.serviceId, Service.LoginService)
