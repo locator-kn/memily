@@ -12,6 +12,10 @@ module Controller {
             })
         }
 
+        docUpload() {
+            this.$state.go('app.docUpload');
+        }
+
         static controllerId:string = "DocumentOverviewCtrl";
     }
 }

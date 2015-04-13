@@ -1,29 +1,20 @@
 <ion-view view-title="{{ 'DOC_DOCUMENTS' | translate }}" ng-controller="DocumentOverviewCtrl as doc">
-    <div class="bar bar-subheader">
-        <div class="row">
-            <button class="col button button-energized ion-plus">
-                Add Document
-            </button>
-
-            <div class="list list-inset">
-                <label class="item item-input">
-                    <i class="icon ion-search placeholder-icon"></i>
-                    <input type="text" placeholder="Search">
-                </label>
-            </div>
-        </div>
-    </div>
-    <ion-content>
+    <ion-header-bar class="bar bar-subheader">
+        <button class="col button button-energized button-small ion-plus" ng-click="doc.docUpload()">
+            {{ 'DOC_ADD_DOCUMENT' | translate }}
+        </button>
+     </ion-header-bar>
+    <ion-content class="has-subheader">
         <div class="list card" ng-repeat="document in doc.documents">
-                <div class="item item-avatar">
-                    <img src="{{document.icon}}">
-                    <h2>{{document.name}}</h2>
-                    <button class="ion-arrow-up-a">{{document.upvotes}}</button>
-                    <button class="ion-arrow-down-a">{{document.downvotes}}</button>
-                </div>
-                <div class="item item-body">
-                    <p>{{document.description}} {{document.date}} Uploader: {{document.uploader}}</p>
-                </div>
+            <div class="item item-avatar">
+                <img src="{{document.icon}}">
+                <h2>{{document.name}}</h2>
+                <button class="ion-arrow-up-a">{{document.upvotes}}</button>
+                <button class="ion-arrow-down-a">{{document.downvotes}}</button>
+            </div>
+            <div class="item item-body">
+                <p>{{document.description}} {{document.date}} Uploader: {{document.uploader}}</p>
+            </div>
         </div>
     </ion-content>
 </ion-view>
