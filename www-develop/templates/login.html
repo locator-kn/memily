@@ -4,17 +4,17 @@
             <div class="login-elements">
                 <div class="list">
                     <label class="item item-input">
-                        <input type="text" placeholder="Mail">
+                        <input type="text" placeholder="Mail" ng-model="mail">
                     </label>
                     <label class="item item-input">
-                        <input type="password" placeholder="Password">
+                        <input type="password" placeholder="Password" ng-model="password">
                     </label>
                 </div>
                 <div class="login-remember-me">
                     <ion-checkbox class="remember-me-checkbox">Remember me</ion-checkbox>
                 </div>
                 <div class="login-submit">
-                    <button class="login-button button button-energized" ng-click="lc.submit()">
+                    <button class="login-button button button-energized" ng-click="lc.submit(mail, password)">
                         Log in
                     </button>
                 </div>

@@ -5,7 +5,12 @@ module Controller {
 
         }
 
-        submit() {
+        submit(username, password) {
+            //var encodedPassword = $base64.encode(password);
+
+            this.LoginService.auhtentification(username, password).then(result => {
+
+            });
 
             /*
              this is necessary to prevent the ui router from popping up a new view

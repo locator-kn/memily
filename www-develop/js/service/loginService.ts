@@ -1,7 +1,7 @@
 module Service {
     export class LoginService {
 
-        constructor(private $q) {
+        constructor(private $q, private $base64, private $http) {
         }
 
         getProfileData() {
@@ -12,6 +12,12 @@ module Service {
 
                 }, 500);
             });
+        }
+
+        auhtentification (username, password) {
+            var authdata = this.$base64.encode(username + ':' + password);
+            this.$http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
+            return this.$http.get('templates/dashboard.html');
         }
 
         static serviceId:string = "LoginService";

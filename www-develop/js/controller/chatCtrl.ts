@@ -18,6 +18,7 @@ module Controller {
 
         newGroupMessage(message:string) {
             console.log("Message '" + message + "' was send");
+            //this.grpChat.messages.add("Hans");
             //TODO: store new entry to DB (content, date, userID)
         }
 
