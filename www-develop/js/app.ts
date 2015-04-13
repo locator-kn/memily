@@ -22,8 +22,9 @@
 /// <reference path="./service/postService.ts" />
 
 /// <reference path="./controller/chatCtrl.ts" />
-/// <reference path="./controller/documentCtrl.ts" />
+/// <reference path="./service/chatService.ts" />
 
+/// <reference path="./controller/documentCtrl.ts" />
 
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
@@ -150,6 +151,7 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'emoji'])
     .controller(Controller.PostCtrl.controllerId, Controller.PostCtrl)
     .controller(Controller.ChatCtrl.controllerId, Controller.ChatCtrl)
     .controller(Controller.DocumentCtrl.controllerId, Controller.DocumentCtrl)
+    .controller(Controller.ChatCtrl.controllerId, Controller.ChatCtrl)
 
 
     .service(Service.ProfileService.serviceId, Service.ProfileService)
@@ -158,6 +160,7 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'emoji'])
     .service(Service.GroupOverviewService.serviceId, Service.GroupOverviewService)
     .service(Service.BoardService.serviceId, Service.BoardService)
     .service(Service.PostService.serviceId, Service.PostService)
+    .service(Service.ChatService.serviceId, Service.ChatService)
 
 
     .config(function ($translateProvider) {
