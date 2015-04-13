@@ -16,6 +16,11 @@ module Controller {
             });
         }
 
+        newGroupMessage(message:string) {
+            console.log("Message '" + message + "' was send");
+            //TODO: store new entry to DB (content, date, userID)
+        }
+
         static controllerId:string = "ChatCtrl";
     }
 }

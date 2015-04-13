@@ -10,9 +10,9 @@
         </div>
         <div class="item item-input-inset">
             <label class="item-input-wrapper">
-                <input type="text" placeholder="Type your message">
+                <input type="text" placeholder="Type your message" ng-model="newMessage">
             </label>
-            <button class="button button-small">
+            <button class="button button-small" ng-click="gc.newGroupMessage(newMessage)">
                 Send
             </button>
         </div>
