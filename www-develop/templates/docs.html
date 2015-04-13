@@ -1,7 +1,7 @@
 <ion-view view-title="{{ 'DOC_DOCUMENTS' | translate }}" ng-controller="DocumentOverviewCtrl as doc">
     <div class="bar bar-subheader">
         <div class="row">
-            <button class="col button button-energized ion-plus button-small">
+            <button class="col button button-energized ion-plus">
                 Add Document
             </button>
 
@@ -11,24 +11,17 @@
                     <input type="text" placeholder="Search">
                 </label>
             </div>
-
         </div>
     </div>
     <ion-content>
         <div class="list card" ng-repeat="document in doc.documents">
-            <a ng-href="#">
                 <div class="item item-avatar">
                     <img src="{{document.icon}}">
                     <h2>{{document.name}}</h2>
                 </div>
-
                 <div class="item item-body">
-                    <p>{{document.description}}</p>
-                    <p>{{document.date}}</p>
-                    <p>Uploader: {{document.uploader}}</p>
+                    <p>{{document.description}} {{document.date}} Uploader: {{document.uploader}}</p>
                 </div>
-            </a>
         </div>
-
     </ion-content>
 </ion-view>
