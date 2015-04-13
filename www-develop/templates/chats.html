@@ -1,8 +1,20 @@
 <ion-view view-title="Chat" ng-controller="ChatCtrl as gc">
     <ion-content>
-        
-        <div class="messages" ng-repeat="message in gc.grpChat.messages"">
+        <div class="messages" ng-repeat="message in gc.grpChat.messages">
+            <div class="row">
+                <img src="dummy">
+                <a href="#">Username</a>
+                <p>{{message.date}}</p>
+            </div>
             <p>{{message.content}}</p>
+        </div>
+        <div class="item item-input-inset">
+            <label class="item-input-wrapper">
+                <input type="text" placeholder="Type your message">
+            </label>
+            <button class="button button-small">
+                Send
+            </button>
         </div>
     </ion-content>
     <ng-include src="'/templates/grp_menu.html'"></ng-include>
