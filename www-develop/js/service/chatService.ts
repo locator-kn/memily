@@ -7,7 +7,7 @@ module Service {
         groupChat(_groupID) {
             return this.$q(function (resolve, reject) {
                 setTimeout(function () {
-                    resolve([
+                    resolve(
                         {
                             "_id": "551bd8d98fe8ee54fe79fbe0",
                             "messages": [
@@ -28,7 +28,7 @@ module Service {
                                 }
                             ]
                         }
-                    ]);
+                    );
                 }, 500);
             });
         }

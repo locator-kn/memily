@@ -1,10 +1,10 @@
 <ion-view view-title="Chat" ng-controller="ChatCtrl as gc">
     <ion-content>
-
-        <h2>Chats</h2>
-
+        
+        <div class="messages" ng-repeat="message in gc.grpChat.messages"">
+            <p>{{message.content}}</p>
+        </div>
     </ion-content>
-
     <ng-include src="'/templates/grp_menu.html'"></ng-include>
 </ion-view>
 

@@ -6,12 +6,13 @@ module Controller {
 
         constructor(private $scope, private $stateParams ,private ChatService) {
             this._ID = this.$stateParams.groupID;
+            this.groupChat();
         }
 
         groupChat() {
             this.ChatService.groupChat(this._ID).then(result => {
                 this.grpChat = result;
-                console.log(this.grpChat);
+                console.log(this.grpChat._id);
             });
         }
 
