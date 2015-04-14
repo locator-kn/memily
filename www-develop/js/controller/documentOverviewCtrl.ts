@@ -1,8 +1,11 @@
 module Controller {
     export class DocumentOverviewCtrl {
+
+        _ID: number;
         documents;
 
-        constructor(private $scope, private $state, private DocumentOverviewService) {
+        constructor(private $scope, private $state, private $stateParams, private DocumentOverviewService) {
+            this._ID = this.$stateParams.groupID;
             this.allDocuments();
         }
 
