@@ -3,8 +3,8 @@
         <div class="messages" ng-repeat="message in gc.grpChat.messages">
             <div class="row">
                 <img src="dummy">
-                <a href="#">Username</a>
-                <p>{{message.date}}</p>
+                <a class="groupChatUsername" href="#">Username</a>
+                <p class="groupChatDate">{{message.date}}</p>
             </div>
             <p>{{message.content}}</p>
         </div>
