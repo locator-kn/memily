@@ -7,7 +7,6 @@ module Controller {
             this._ID = this.$stateParams.groupID;
         }
 
-
         static controllerId:string = "DocumentCtrl";
     }
 }
