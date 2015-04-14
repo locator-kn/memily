@@ -28,6 +28,15 @@
 
 /// <reference path="./controller/documentCtrl.ts" />
 
+/// <reference path="./controller/documentOverviewCtrl.ts" />
+/// <reference path="./service/documentOverviewService.ts" />
+
+/// <reference path="./controller/documentUploadCtrl.ts" />
+
+
+
+
+
 
 
 
@@ -136,6 +145,15 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'emoji', 'base64']
                 }
             })
 
+            .state('app.docUpload', {
+                url: "/group/:groupID/docs/upload",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/docUpload.html"
+                    }
+                }
+            })
+
             .state('app.chats', {
                 url: "/group/:groupID/chats",
                 views: {
@@ -156,7 +174,8 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'emoji', 'base64']
     .controller(Controller.PostCtrl.controllerId, Controller.PostCtrl)
     .controller(Controller.ChatCtrl.controllerId, Controller.ChatCtrl)
     .controller(Controller.DocumentCtrl.controllerId, Controller.DocumentCtrl)
-    .controller(Controller.ChatCtrl.controllerId, Controller.ChatCtrl)
+    .controller(Controller.DocumentOverviewCtrl.controllerId, Controller.DocumentOverviewCtrl)
+    .controller(Controller.DocumentUploadCtrl.controllerId, Controller.DocumentUploadCtrl)
 
 
     .service(Service.ProfileService.serviceId, Service.ProfileService)
@@ -166,6 +185,7 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'emoji', 'base64']
     .service(Service.BoardService.serviceId, Service.BoardService)
     .service(Service.PostService.serviceId, Service.PostService)
     .service(Service.ChatService.serviceId, Service.ChatService)
+    .service(Service.DocumentOverviewService.serviceId, Service.DocumentOverviewService)
 
     .directive('megadate', function () {
         return {
