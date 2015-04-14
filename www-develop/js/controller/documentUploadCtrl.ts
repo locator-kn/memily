@@ -5,6 +5,10 @@ module Controller {
 
         }
 
+        openFileDialog() {
+            console.log('openFileDialog');
+        }
+        
         static controllerId:string = "DocumentUploadCtrl";
     }
 }
