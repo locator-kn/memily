@@ -2,6 +2,8 @@
 /// <reference path="../../typings/angular-translate/angular-translate.d.ts" />
 /// <reference path="../../typings/cordova-ionic/cordova-ionic.d.ts" />
 /// <reference path="../../typings/cordova/cordova.d.ts" />
+/// <reference path="../../typings/moment/moment.d.ts" />
+
 /// <reference path="./controller/profileCtrl.ts" />
 /// <reference path="./controller/loginCtrl.ts" />
 /// <reference path="./controller/dashboardCtrl.ts" />
@@ -27,6 +29,8 @@
 /// <reference path="./controller/documentCtrl.ts" />
 
 
+
+
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
@@ -49,6 +53,7 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'emoji', 'base64']
         });
     })
     .constant('basePath', '/api/')
+
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
 
@@ -162,6 +167,16 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'emoji', 'base64']
     .service(Service.PostService.serviceId, Service.PostService)
     .service(Service.ChatService.serviceId, Service.ChatService)
 
+    .directive('megadate', function () {
+        return {
+            scope: { date: '='},
+            controller: function($scope) {
+                var date = new Date($scope.date);
+                $scope.date = moment(date).startOf('minute').fromNow();
+            },
+            template: '<p>{{date}}</p>'
+        };
+    })
 
     .config(function ($translateProvider) {
         $translateProvider.useStaticFilesLoader({
@@ -169,5 +184,10 @@ angular.module('starter', ['ionic', 'pascalprecht.translate', 'emoji', 'base64']
             suffix: '.json'
         }).preferredLanguage('de');
     });
+
+
+
+
+
 
 
