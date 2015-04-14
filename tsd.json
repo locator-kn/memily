@@ -106,6 +106,9 @@
         },
         "angular-translate/angular-translate.d.ts": {
             "commit": "954c64c100478ebb0b3cd1d9949237c2ee6c2a9d"
+        },
+        "moment/moment.d.ts": {
+            "commit": "ed38db403a56da84731a6f77b545762ee477a45b"
         }
     }
 }
